@@ -1,0 +1,24 @@
+{
+  "name": "sample_mern_app",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/nithinkumar2704/Sample_MERN_APP#readme",
+  "bugs": {
+    "url": "https://github.com/nithinkumar2704/Sample_MERN_APP/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nithinkumar2704/Sample_MERN_APP.git"
+  },
+  "license": "ISC",
+  "author": "Nithin",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^5.2.1",
+    "mongodb": "^7.6.0"
+  }
+}
