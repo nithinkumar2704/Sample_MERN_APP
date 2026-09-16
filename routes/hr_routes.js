@@ -6,7 +6,7 @@ router.get("/employees",(req,res)=>{
 });
 
 router.post("/assign-task",(req,res)=>{
-    res.send("Assign task page called");
+    res.send("Assign task method page called");
 });
 
 router.get("/tasks",(req,res)=>{
