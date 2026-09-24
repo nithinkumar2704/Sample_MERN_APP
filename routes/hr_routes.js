@@ -17,6 +17,6 @@ router.get("/tasks",(req,res)=>{
 });
 
 router.get("/notifications",(req,res)=>{
-    res.send("Notifications page called");
+    res.send("Notifications page opened");
 });
 module.exports=router;
