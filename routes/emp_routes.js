@@ -28,8 +28,13 @@ router.get("/viewtasks",(req,res)=>{
 router.get("/viewtodo",(req,res)=>{
     res.send("View todo page called");
 })
-router.patch("/updateprofile",(req,res)=>{
-    res.send("Update profile page called");
+router.patch("/updateprofile/:id",async(req,res)=>{   //async used cuz dealing with database
+   let data=req.body;
+   if (data.password){
+    data.password=await bcrypt.hash(data.password,10);
+   }
+   let updatedata=await users.findByIdAndUpdate(req.params.id,{$set:data});
+   res.send(updatedata);
 });
 
 module.exports=router;
