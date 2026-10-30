@@ -9,17 +9,18 @@ router.post("/register",async (req,res)=>{
     let result=await newuser.save();
     res.send(result);
 })
+//localhost:3000/api/emp/login
 router.post("/login",async (req,res)=>{
     let user=await users.findOne({email:req.body.email}); //collecting mail from postman and checking in database
     if(user){
         let passmatch=await bcrypt.compare(req.body.password,user.password);
 if(passmatch){
-    res.send("Login Successfully");
+    res.send({"msg":"Login success","user":{ _id:user._id,name:user.name,email:user.email,role:user.role}});
 }else{
-    res.send("Incorrect Passwordd");
+    res.send({"msg":"Login failed"});
 }
     }else{
-        res.send("Invalid Email");
+        res.send({"msg":"Invalid Email"});
     }
 })
 router.get("/viewtasks",(req,res)=>{

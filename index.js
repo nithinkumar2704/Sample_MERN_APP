@@ -1,8 +1,10 @@
 let express=require('express');
 let mongoose=require('mongoose');
+let cors=require('cors'); 
 let hrroutes=require('./routes/hr_routes');
 let emproutes=require('./routes/emp_routes');
 let app=express();
+app.use(cors());
 //connect with out mongodb hrmanagement database
 mongoose.connect("mongodb://localhost:27017/hrmanagement").then(
     ()=>console.log("Connected to MongoDB")

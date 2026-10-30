@@ -1,28 +1,15 @@
-import {useState} from "react" 
+import {useState} from "react"
 function Register(){
     let [name,setName]=useState("")
     let [emailid,setEmailid]=useState("")
     let [password,setPassword]=useState("")
-    let [age,setAge]=useState("")
-    let handleRegister=(e)=>{
-        e.preventDefault()
-        //used to collect the input from the form 
-    }
-return(
-    <div>
-        <form onSubmit={handleRegister}>
-            <br></br>
-            <input type="text" value={name} onChange={e=>setName(e.target.value)} placeholder="Enter name"></input><br/>
-            <input type="text" value={emailid} onChange={event=>setEmailid(event.target.value)} placeholder="Enter emailid"></input><br/>
-            <input type="password" value={password} onChange={e=>setPassword(e.target.value)} placeholder="Enter your password"></input><br/>
-            <input type="number" value={age} onChange={e=>setAge(e.target.value)} placeholder="Enter age"></input><br/>
-            <br/>
-            <button type="submit">Register</button>
-        </form>
-        <p>{name}</p>
-        <p>{emailid}</p>
-        <p>{password}</p>
-        <p>{age}</p>
-    </div>
-      )}
+    let [age,setAge]=useState(17)
+    return(<div>
+        <input type="text" value={name} placeholder="Enter name"></input><br/>
+        <input type="text" value={emailid} placeholder="Enter emailid"></input><br/>
+        <input type="password" value={password} placeholder="enter password"></input><br/>
+        <input type="number" value={age} placeholder="Enter age"></input><br/>
+        <button type="submit">Register</button>
+    </div>)
+}
 export default Register
